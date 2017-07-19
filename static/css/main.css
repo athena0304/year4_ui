@@ -144,16 +144,18 @@ body {
 .button-wrapper .btn {
   display: inline-block;
   width: 80%;
-  padding: 10px 0;
-  border-radius: 20px;
-  background: transparent;
+  padding: 15px 0;
+  // border-radius: 20px;
+  // background: transparent;
   font-size: 14px;
 }
 .button-wrapper .btn-want,
 .button-wrapper .btn-help,
 .button-wrapper .btn-want-also {
+  border: none;
   color: #fff;
-  border: 1px solid #fff;
+  // border: 1px solid #fff;
+  background: url('/static/img/btn-bg.png');
 }
 .button-wrapper .btn-cheerup {
   color: #fff;
