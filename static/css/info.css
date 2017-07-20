@@ -1,5 +1,5 @@
 .input-wrapper {
-  margin-top: 25%;
+  margin-top: 5%;
   color: #fff;
   margin-bottom: 20%;
 }
@@ -35,7 +35,8 @@
 .input-wrapper .form_field .validate-item {
   height: 1.25rem;
   line-height: 1.25rem;
-  border: 0.03rem solid #dddddd;
+  // border: 0.03rem solid #dddddd;
+  border: none;
   margin-bottom: 0.67rem;
 }
 .input-wrapper .form_field .validate-item .error {
@@ -79,16 +80,18 @@
 .input-wrapper .form_field .validate-item span {
   display: inline-block;
   width: 1.5rem;
-  margin-left: 0.4rem;
+  padding-left: 0.4rem;
   
   font-weight: 700;
+  background: rgba(255,255,255,.5);
 }
 .input-wrapper .form_field .validate-item input {
   border: none;
   width: 7.4rem;
   font-size: 0.38rem;
-  background-color: transparent;
+  // background-color: transparent;
   height: 1.24rem;
   line-height: 1.24rem;
   color: #fff;
+  background: rgba(255,255,255,.5);
 }
