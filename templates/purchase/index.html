@@ -215,8 +215,17 @@ $.ajax({
   } 
 })
 </script>
-
 <script>
+    var image_heart = $(".image_heart")
+    var num = 30 - parseInt($(".remain_cheer_num").eq(0).text());
+    image_heart.filter(":lt("+ num +")").attr("src", "/static/img/choose_heart.png");
+
+    $(".btn-help").on('click', function(){
+        $(".want-tips").show();
+    })
+
+</script>
+<!-- <script>
     var ticket_models = $(".ticket_modal")
     ticket_models.each(function(index, ele) {
         $(this).css("left", index * 5 + "%")
@@ -227,6 +236,6 @@ $.ajax({
     $(".btn-help").on('click', function(){
         $(".want-tips").show();
     })
-</script>
+</script> -->
 </body>
 </html>
