@@ -39,9 +39,9 @@
 <div class="ticket-wrapper">
     <div class="ticket_img_wrapper">
         {% if remain_cheer_num<=0%}
-        <img src="/static/img/red_bg.png" class="ticket" alt="">
+        <img src="/static/img/heart-bg.png" class="ticket" alt="">
         <div class="float_area">
-            <img src="/static/img/700.png" class="ticket gsteps_six" alt="">
+            <img src="/static/img/top-slide.png" class="ticket gsteps_six" alt="">
             <ul class="wrapper_heart">
                 <li class="heart">
                     <image class="image_heart" src="/static/img/choose_heart.png"></image>
@@ -85,9 +85,9 @@
             </div>
         </div>
         {% elif  remain_cheer_num<=30 %}
-        <img src="/static/img/red_bg.png" class="ticket" alt="">
+        <img src="/static/img/heart-bg.png" class="ticket" alt="">
         <div class="float_area">
-            <img src="/static/img/700.png" class="ticket gsteps_six" alt="">
+            <img src="/static/img/top-slide.png" class="ticket gsteps_six" alt="">
             <ul class="wrapper_heart">
                 <li class="heart">
                     <image class="image_heart" src="/static/img/unchoose_heart.png"></image>
@@ -141,13 +141,13 @@
 
 <div class="button-wrapper">
     {% if remain_cheer_num<=0%}
-        <a href="/activity" class="btn btn-common btn-help friend-success"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
+        <a href="/activity" class="btn btn-common btn-help">我也要公演入场劵</a>
         <!-- <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p> -->
     {% elif  remain_cheer_num<=30 %}
          <a class="btn btn-common btn-cheerup" href="javascript:;" onclick="cheer('{{ union_id }}', '{{ target_union_id }}')">
             <img src="/static/img/cheer.png" alt="">
         </a>
-         <a href="/activity" class="btn btn-common btn-myhelp"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
+         <a href="/activity" class="btn btn-common btn-help">我也要公演入场劵</a>
         <!-- <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p> -->
     {% end%}
 
