@@ -141,13 +141,13 @@
 
 <div class="button-wrapper">
     {% if remain_cheer_num<=0%}
-        <a href="/activity" class="btn btn-help friend-success"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
+        <a href="/activity" class="btn btn-common btn-help friend-success"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
         <!-- <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p> -->
     {% elif  remain_cheer_num<=30 %}
-         <a class="btn btn-cheerup" href="javascript:;" onclick="cheer('{{ union_id }}', '{{ target_union_id }}')">
+         <a class="btn btn-common btn-cheerup" href="javascript:;" onclick="cheer('{{ union_id }}', '{{ target_union_id }}')">
             <img src="/static/img/cheer.png" alt="">
         </a>
-         <a href="/activity" class="btn btn-help"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
+         <a href="/activity" class="btn btn-common btn-myhelp"><img class="iwant" src="/static/img/iwant.png" alt=""></a>
         <!-- <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p> -->
     {% end%}
 

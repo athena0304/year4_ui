@@ -145,18 +145,27 @@ body {
   display: inline-block;
   width: 80%;
   padding: 15px 0;
-  // border-radius: 20px;
-  // background: transparent;
   font-size: 14px;
 }
-.button-wrapper .btn-want,
-.button-wrapper .btn-help,
-.button-wrapper .btn-want-also {
+.button-wrapper .btn-common {
   border: none;
   color: #fff;
-  // border: 1px solid #fff;
   background: url('/static/img/btn-bg.png');
+
 }
+
+.button-wrapper .btn-common img {
+  width: 100%;
+}
+.button-wrapper .btn-common img.iwant {
+  margin-top: 0px;
+}
+/*.button-wrapper .btn-want,
+.button-wrapper .btn-help,
+.button-wrapper .btn-myhelp,
+.button-wrapper .btn-want-also {
+  
+}*/
 .button-wrapper .btn-cheerup {
   color: #fff;
   background: #d32b2e;
@@ -343,35 +352,24 @@ body {
   margin-top: 10px;
   text-align: center;
 }
-.button-wrapper .btn {
+/*.button-wrapper .btn {
   display: inline-block;
   width: 80%;
   border-radius: 20px;
   background: transparent;
   font-size: 14px;
-}
-.button-wrapper .btn-want,
-.button-wrapper .btn-help,
-.button-wrapper .btn-want-also {
-  color: #fff;
-}
-
+}*/
 .button-wrapper .btn-help {
+  margin-top: 10%;
+}
+.button-wrapper .btn-myhelp {
   padding-top: 0;
-}
-.button-wrapper .btn-want img,
-.button-wrapper .btn-help img,
-.button-wrapper .btn-want-also img {
-  width: 100%;
-}
-.button-wrapper .btn-want img.iwant,
-.button-wrapper .btn-help img.iwant,
-.button-wrapper .btn-want-also img.iwant {
-  margin-top: 0%;
+  background: transparent;
 }
 .button-wrapper .btn-cheerup {
   color: #fff;
   margin-bottom: 0px;
+  background: transparent;
 }
 .button-wrapper .btn-cheerup img {
   width: 25%;
