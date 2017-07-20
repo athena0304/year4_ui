@@ -178,16 +178,19 @@ body {
   margin-top: 10px;
 }
 .footer {
-  position: absolute;
-  bottom: 10px;
-  text-align: center;
-  width: 100%;
-  color: #4e91ff;
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+    color: #4e91ff;
 }
 .footer a {
-  font-size: 12px;
-  color: #4e91ff;
-  margin: 0 5px;
+    font-size: 12px;
+    color: #fff;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    border-radius: 14px;
+    padding: 6px 10px;
 }
 .video-link {
   width: 10%;
@@ -275,7 +278,7 @@ body {
 }
 .ticket-wrapper .float_area {
   position: absolute;
-  top: 5%;
+  top: -7%;
   left: 0;
   bottom: 20px;
 }
@@ -287,7 +290,7 @@ body {
   font-size: 0;
 }
 .ticket-wrapper .heart .image_heart {
-  width: 8.5%;
+  width: 7.5%;
   display: inline-block;
   margin-left: 1%;
 }
@@ -348,24 +351,8 @@ body {
 }
 
 
-.button-wrapper {
-  margin-top: 10px;
-  text-align: center;
-}
-/*.button-wrapper .btn {
-  display: inline-block;
-  width: 80%;
-  border-radius: 20px;
-  background: transparent;
-  font-size: 14px;
-}*/
-.button-wrapper .btn-help {
-  margin-top: 10%;
-}
-.button-wrapper .btn-myhelp {
-  padding-top: 0;
-  background: transparent;
-}
+
+
 .button-wrapper .btn-cheerup {
   color: #fff;
   margin-bottom: 0px;
@@ -375,22 +362,22 @@ body {
   width: 25%;
   margin-top: -2%;
 }
-.button-wrapper .want-tips {
-  color: #fff;
-  font-size: 14px;
-  margin-top: 2%;
-  font-weight: bold;
-  position: absolute;
-  bottom: 10%;
-}
-.button-wrapper .want-tips img {
-  width: 80%;
-}
-.button-wrapper .want-tips span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -20%;
-  -webkit-transform: translatey(-50%);
-}
+// .button-wrapper .want-tips {
+//   color: #fff;
+//   font-size: 14px;
+//   margin-top: 2%;
+//   font-weight: bold;
+//   position: absolute;
+//   bottom: 10%;
+// }
+// .button-wrapper .want-tips img {
+//   width: 80%;
+// }
+// .button-wrapper .want-tips span {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   margin-left: -20%;
+//   -webkit-transform: translatey(-50%);
+// }
 
