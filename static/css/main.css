@@ -160,7 +160,8 @@ body {
 .button-wrapper .btn-cheerup {
   color: #fff;
   background: #d32b2e;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  padding: 0;
 }
 .button-wrapper .want-tips {
   color: #fff;
@@ -335,5 +336,63 @@ body {
 .remain_num .exchange-wrapper p {
   font-size: 18px;
   font-weight: bold;
+}
+
+
+.button-wrapper {
+  margin-top: 10px;
+  text-align: center;
+}
+.button-wrapper .btn {
+  display: inline-block;
+  width: 80%;
+  border-radius: 20px;
+  background: transparent;
+  font-size: 14px;
+}
+.button-wrapper .btn-want,
+.button-wrapper .btn-help,
+.button-wrapper .btn-want-also {
+  color: #fff;
+}
+
+.button-wrapper .btn-help {
+  padding-top: 0;
+}
+.button-wrapper .btn-want img,
+.button-wrapper .btn-help img,
+.button-wrapper .btn-want-also img {
+  width: 100%;
+}
+.button-wrapper .btn-want img.iwant,
+.button-wrapper .btn-help img.iwant,
+.button-wrapper .btn-want-also img.iwant {
+  margin-top: 0%;
+}
+.button-wrapper .btn-cheerup {
+  color: #fff;
+  margin-bottom: 0px;
+}
+.button-wrapper .btn-cheerup img {
+  width: 25%;
+  margin-top: -2%;
+}
+.button-wrapper .want-tips {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 2%;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+}
+.button-wrapper .want-tips img {
+  width: 80%;
+}
+.button-wrapper .want-tips span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20%;
+  -webkit-transform: translatey(-50%);
 }
 
