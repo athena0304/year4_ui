@@ -81,7 +81,11 @@
             <div class="remain_num">
                 <img src="/static/img/bottom-slide.png" class="ticket gsteps_person_last" alt="">
                 <div class="exchange-wrapper">
-                    <p>恭喜您已经成功兑换优惠资格</p>
+                    {% if status == 'cheer_done'%}
+                      <p>恭喜您已经成功兑换优惠资格</p>
+                    {% elif  status == 'cheer_payed' %}
+                      <p>您已成功兑换,出示此页面即可入场</p>
+                    {% end %}
                 </div>
             </div>
         </div>
@@ -143,28 +147,29 @@
  <!-- 剩余加油个数个数:{{remain_cheer_num}} -->
 
 {% if remain_cheer_num<=0%}
+{% if status == 'cheer_done'%}
+  <div class="button-wrapper" style="margin-top: 10%">
+    <a href="/api/purchase/info" class="btn btn-common btn-want">马上优惠购买</a>
+  </div>
+  <<!-- p>恭喜您已经成功兑换优惠资格</p> -->
+{% elif  status == 'cheer_payed' %}
+  <div class="success-wrapper">
+      <h3>注意：</h3>
+      <p>入场票仅代表拥有入场的权限</p>
+      <p>也就是说您得尽量去早一些排队入场</p>
+      <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
+  </div>
 
-<div class="button-wrapper" style="margin-top: 10%">
-  <a href="/api/purchase/info" class="btn btn-common btn-want">马上优惠购买</a>
-</div>
+  <h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
+  <h3 class="ticket-title">演出地点：798剧场</h3>
+{% end %}
+
 <!-- 集齐赞的状态-->
 <!-- 在这里嵌入相应的html即可-->
 
-<!-- <div class="exchange-wrapper">
-    <p>恭喜您已成功兑换，现场出具此页面即可入场</p>
-</div> -->
 
-<div class="success-wrapper">
-    <h3>注意：</h3>
-    <p>入场票仅代表拥有入场的权限</p>
-    <p>也就是说您得尽量去早一些排队入场</p>
-    <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
-</div>
 
-<h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
-<h3 class="ticket-title">演出地点：798剧场</h3>
-
-{% elif  remain_cheer_num<=20 %}
+{% elif  remain_cheer_num<=30 %}
 <!--已经被加油但是还未集齐的状态 -->
 
 <div class="button-wrapper" style="margin-top: 10%">
