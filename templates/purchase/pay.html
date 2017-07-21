@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title></title>
+    <script src="/static/js/jquery.js"></script>
+    <!-- // <script src="/static/js/main.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var docEl = window.document.documentElement;
+            var width = docEl.getBoundingClientRect().width;
+            var rootSize = width / 1080 * 100;
+            docEl.style.fontSize = rootSize + 'px';
+        }, false);
+        //获取统一支付订单参数
+        function pay() {
+            var uni_data = '';
+            order_args = {"price": 0.01}  //订单id列表，及地址id
+            $.ajax({
+                type: "POST",
+                url: "/api/purchase/pay", // 点击支付按钮调用该接口，添加订单并获取支付参数
+                data: JSON.stringify(order_args),
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    if (data.code != 0) {
+                        alert(data.msg);
+                        if (data.code == 30005) { //用户未登陆, 直接跳转到登陆认证接口，并带上当前的url,认证登陆完毕再跳转回来
+                            window.location.href = "http://preseller.gsteps.cn/api/user/oauth" + "?current_url=" + escape(window.location.href)
+                        }
+                    } else {
+                        WeixinJSBridge.invoke(
+                                'getBrandWCPayRequest', data.res.appapi_params,
+                                function (res) {
+                                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                                        alert('支付成功');
+                                    }
+                                    if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                                        alert('支付被取消');
+                                    }
+                                    if (res.err_msg == "get_brand_wcpay_request:fail") {
+                                        alert(JSON.stringify(res))
+                                    }
+                                }
+                        );
+                    }
+                }
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+姓名：{{name}}
+电话：{{phone}}
+地址：{{address}}
+价格1:{{price}}
+<input type="button" name="pay" value="确定支付" onclick="pay();"/>
+</body>
+
+</html>

@@ -163,7 +163,8 @@ if (submit) {
                     success: function(resp) {
                         if (resp.code == "0") {
                             console.log("预下订单成功")
-                            window.location = "/order/list?out_trade_no=" + resp.res.out_trade_no;
+                            // window.location = "/order/list?out_trade_no=" + resp.res.out_trade_no;
+                            window.location = "/api/purchase/signup"
                         } else {
                             alert(resp.msg);
                         }
