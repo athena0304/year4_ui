@@ -81,7 +81,10 @@
                 </li>
             </ul>
             <div class="remain_num">
-                <img src="/static/img/gsteps_friends_success.png" class="ticket gsteps_person_last" alt="">
+                <img src="/static/img/gsteps_person_last.png" class="ticket gsteps_person_last" alt="">
+                <div class="exchange-wrapper">
+                    <p>您的朋友已成功兑换优惠资格</p>
+                </div>
             </div>
         </div>
         {% elif  remain_cheer_num<=30 %}
@@ -281,8 +284,8 @@ $.ajax({
             async: true,
             data: data,
             type: "POST",
-            success: function (req) {
-                if (req.code == 1) {
+            success: function (res) {
+                if (res.code == 0) {
                     layer.open({
                         title: [
                         '360G-STEPS公演入场票兑换',
@@ -292,19 +295,19 @@ $.ajax({
                         btn:['确定']
                     })
 
-                    var num = 16 - req.target_remain_cheer_num;
-
+                    var num = 30 - res.res.target_remain_cheer_num;
+                    // num = 0
                     if(num == 0) {
                         $(".exchange-wrapper p").html("您的朋友已经成功获取入场票");
                     } else {
-                        image_heart.eq(num-1).attr("src", "static/img/choose_heart.png");
-                        $(".remain_cheer_num").text(req.target_remain_cheer_num)
-                        zan = layer.open({
-                        content:"<div class='zan_wrapper'><img src='/static/img/zan-success1.png' style='width: 100%'></img><img src='/static/img/make_sure.png' class='zan_make'></img>"
-                        })
+                        image_heart.eq(num-1).attr("src", "/static/img/choose_heart.png");
+                        $(".remain_cheer_num").text(res.res.target_remain_cheer_num)
+                        // zan = layer.open({
+                        // content:"<div class='zan_wrapper'><img src='/static/img/zan-success1.png' style='width: 100%'></img><img src='/static/img/make_sure.png' class='zan_make'></img>"
+                        // })
                     }
 
-                } else if (req.code == 5){
+                } else if (res.code == 5){
 
                     repeat = layer.open({
                         content:"<div class='repeat_wrapper'><img src='/static/img/repeat.png' style='width: 100%'></img><img src='/static/img/make_sure.png' class='repeat_make'></img>"
@@ -323,7 +326,7 @@ $.ajax({
                         '360G-STEPS公演入场票兑换',
                         'background-color:#182f52; color:#fff;'
                         ],
-                        content:"加油失败:错误码" + req.code,
+                        content:"加油失败:错误码" + res.code,
                         btn:['确定']
                     })
                 }
