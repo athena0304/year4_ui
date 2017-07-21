@@ -36,6 +36,7 @@
 
 <div class="ticket-wrapper">
     <div class="ticket_img_wrapper">
+        {{remain_cheer_num}}
         {% if remain_cheer_num<=0%}
         <img src="/static/img/heart-bg.png" class="ticket" alt="">
         <div class="float_area">
@@ -137,6 +138,7 @@
                 <div class="exchange-wrapper">
                     {% if  status == 'cheer_payed' %}
                       <p>您已成功兑换,出示此页面即可入场</p>
+                      <span class="remain_cheer_num" style='display: none'>{{ remain_cheer_num }}</span>
                     {% else %}
                       <p>还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人点赞即可1折购买入场券</p>
                     {% end %}
@@ -243,6 +245,7 @@ $.ajax({
 <script>
     var image_heart = $(".image_heart")
     var num = 30 - parseInt($(".remain_cheer_num").eq(0).text());
+
     image_heart.filter(":lt("+ num +")").attr("src", "/static/img/choose_heart.png");
 
     $(".btn-help").on('click', function(){
