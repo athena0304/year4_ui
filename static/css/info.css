@@ -86,7 +86,8 @@
   background: rgba(255,255,255,.5);
 }
 .input-wrapper .form_field .validate-item input {
-  border: none;
+  border: 0px solid transparent;
+  border-radius: 0;
   width: 7.4rem;
   font-size: 0.38rem;
   // background-color: transparent;
