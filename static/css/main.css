@@ -225,10 +225,10 @@ body {
   padding: 10px;
 }
 .success-wrapper {
-  margin: 5px 5%;
+  margin: 10% 10% 5%;
   padding: 10px;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+  // border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .success-wrapper h3 {
   font-size: 14px;
