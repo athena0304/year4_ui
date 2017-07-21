@@ -154,6 +154,12 @@ body {
 
 }
 
+.button-wrapper .btn-finish {
+  border: none;
+  color: #fff;
+  background: rgba(136, 136, 136, 0.8);
+
+}
 .button-wrapper .btn-common img {
   width: 100%;
 }
