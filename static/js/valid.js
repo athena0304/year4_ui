@@ -141,37 +141,37 @@ if (submit) {
         if (errorMsg) {
             return false;
         } else {
-            var nodelist = document.querySelectorAll("input[type=checkbox]:checked");
-            if (nodelist.length == 0) {
-                checkboxError.style.display = "block";
-            } else {
-                checkboxError.style.display = "none";
-                var kind_ids = Array.prototype.slice.call(nodelist).map(function(item) {
-                    return item.name
-                });
-                reqwest({
-                    url: '/order/signup',
-                    type: 'json',
-                    method: 'post',
-                    data: {
-                        "kind_ids": JSON.stringify(kind_ids),
-                        "purchase_id": 1,
-                        "phone": phone.value,
-                        "name": userName.value,
-                        "wechat_no": weixin.value
-                    },
-                    success: function(resp) {
-                        if (resp.code == "0") {
-                            console.log("预下订单成功")
-                            // window.location = "/order/list?out_trade_no=" + resp.res.out_trade_no;
-                            window.location = "/api/purchase/signup"
-                        } else {
-                            alert(resp.msg);
-                        }
-
+            reqwest({
+                url: '/api/purchase/signup',
+                type: 'json',
+                method: 'post',
+                data: {
+                    "phone": phone.value,
+                    "name": userName.value,
+                    "address": address.value
+                },
+                success: function(resp) {
+                    if (resp.code == "0") {
+                        console.log("预下订单成功")
+                        // window.location = "/order/list?out_trade_no=" + resp.res.out_trade_no;
+                        window.location = "/api/purchase/signup?name="+ userName.value + '&phone=' + phone.value + '&address=' + address.value
+                    } else {
+                        alert(resp.msg);
                     }
-                })
-            }
+
+                }
+            })
+
+            // var nodelist = document.querySelectorAll("input[type=checkbox]:checked");
+            // if (nodelist.length == 0) {
+            //     // checkboxError.style.display = "block";
+            // } else {
+            //     // checkboxError.style.display = "none";
+            //     var kind_ids = Array.prototype.slice.call(nodelist).map(function(item) {
+            //         return item.name
+            //     });
+                
+            // }
         }
     };
 }
