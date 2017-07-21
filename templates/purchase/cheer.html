@@ -307,26 +307,28 @@ $.ajax({
                         // })
                     }
 
-                } else if (res.code == 5){
+                } 
+                // else if (res.code == 5){
 
-                    // repeat = layer.open({
-                    //     content:"<div class='repeat_wrapper'><img src='/static/img/repeat.png' style='width: 100%'></img><img src='/static/img/make_sure.png' class='repeat_make'></img>"
-                    //     })
+                //     // repeat = layer.open({
+                //     //     content:"<div class='repeat_wrapper'><img src='/static/img/repeat.png' style='width: 100%'></img><img src='/static/img/make_sure.png' class='repeat_make'></img>"
+                //     //     })
+                //     layer.open({
+                //         title: [
+                //         'G-STEPS公演入场票兑换',
+                //         'background-color:#182f52; color:#fff;'
+                //         ],
+                //         content:'<p>您之前已经成功加油，不能重复哦！</p>',
+                //         btn:['确定']
+                //     })
+                // } 
+                else{
                     layer.open({
                         title: [
                         'G-STEPS公演入场票兑换',
                         'background-color:#182f52; color:#fff;'
                         ],
-                        content:'<p>您之前已经成功加油，不能重复哦！</p>',
-                        btn:['确定']
-                    })
-                } else{
-                    layer.open({
-                        title: [
-                        'G-STEPS公演入场票兑换',
-                        'background-color:#182f52; color:#fff;'
-                        ],
-                        content:"加油失败:错误码" + res.code,
+                        content:res.msg,
                         btn:['确定']
                     })
                 }
