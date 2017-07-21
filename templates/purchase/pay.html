@@ -41,6 +41,7 @@
                                 function (res) {
                                     if (res.err_msg == "get_brand_wcpay_request:ok") {
                                         alert('支付成功');
+                                        window.location.href = '/api/purchase/index'
                                     }
                                     if (res.err_msg == "get_brand_wcpay_request:cancel") {
                                         alert('支付被取消');
