@@ -34,18 +34,22 @@
 <div class="introtext-wrapper">
     <p>一个连程序猿都会Hip-Hop的街舞社团，一场长大之后的玩耍</p>
 </div>
-
-<div class="button-wrapper">
+{% if isfinish == 'true'%}
+  <div class="button-wrapper">
     <a href="javascript:;" class="btn btn-finish">抱歉，活动已结束</a>
 </div>
-
-<div class="button-wrapper">
+{% else %}
+  <div class="button-wrapper">
     <a href="/api/purchase/index" class="btn btn-common">一折抢购入场券</a>
-</div>
+ </div>
 
 <div class="button-wrapper">
     <a href="/api/purchase/info" class="btn btn-common">我是土豪，直接买</a>
 </div>
+{% end %}
+
+
+
 
 <!-- <div class="footer">
     <a href="#">有问题，点这里</a>
