@@ -89,15 +89,19 @@
    </div>
 
    <div class="list-row">
-       <span style="color:red">应付折后</span> <span id='pay-price' class="fr" data-price='{{price}}'>¥{{price}}</span>
+        {% if discot == 'true' %}
+       <span style="color:red">一折价格(原价400)</span> <span id='pay-price' class="fr" data-price='{{price}}'>¥{{price}}</span>
+       {% else %}
+       <span style="color:red">全价票(不用积赞,土豪专属)</span> <span id='pay-price' class="fr" data-price='{{price}}'>¥{{price}}</span>
+       {% end %}
    </div>
    <div class="list-row">
        <p>
            入场须知
        </p>
 
-        <p>1. 支付成功后，主办方对根据联系方式与您联系，给予门票</p>
-        <p>2. 活动地点在798剧场</p>
+        <p>1. 支付成功后，主办方会根据联系方式与您联系，给予门票</p>
+        <p>2. 活动地点在798艺术区798剧场</p>
         <p>3. 活动时间为2017年7月29日晚7点</p>
         <p>4. 本次活动不接受退款或者转让</p>
         <p>5. 本次活动解释权归G-STEPS CREW官方所有</p>
