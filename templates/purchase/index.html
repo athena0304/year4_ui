@@ -222,7 +222,9 @@
     <div class="button-wrapper" style="margin-top: 10%">
         <a href='javascript:;' class='btn btn-common btn-help'><img src="/static/img/pengyou.png" alt=""></a>
         <!-- <p class="want-tips" style="display:none"><img src="/static/img/share-text.png" style="width: 80%;" alt=""></p> -->
-        <p class="want-tips" style="display:none;color: #000">哈哈哈</p>
+        <p class="want-tips" style="display:none;color: #000">
+            <img style='width:100px' src="/static/img/nidongde.png">
+        </p>
     </div>
 {% end %}
 {% end%}
@@ -300,7 +302,7 @@ $.ajax({
             wx.config(config);
             wx.ready(function () {
                 wx.onMenuShareAppMessage({
-                    title: '{{pre_tittle}}G-STEPS ST公演入场券！长大之后的一场玩耍！',
+                    title: '{{pre_tittle}}G-STEPS五周年公演入场券，快来帮我加个油吧！',
                     desc: '一个连程序猿都会Hip-Hop的街舞工作室，来瞧瞧我们的另一面！',
                     link: data.res.link,
                     imgUrl: 'http://year4.tueye.com/static/img/logo.png',
